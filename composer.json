@@ -1,5 +1,5 @@
 {
-    "name": "symfony/mcp-bundle",
+    "name": "ajtis/mcp-bundle",
     "description": "Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
     "license": "MIT",
     "type": "symfony-bundle",
