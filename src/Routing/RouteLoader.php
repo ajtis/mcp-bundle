@@ -22,8 +22,8 @@ final class RouteLoader extends Loader
     private bool $loaded = false;
 
     public function __construct(
-        private bool $httpTransportEnabled,
-        private string $httpPath,
+        private bool $httpTransportEnabled = true,
+        private string $httpPath = '/_mcp',
     ) {
         parent::__construct();
     }

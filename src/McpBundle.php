@@ -62,6 +62,8 @@ final class McpBundle extends AbstractBundle
         $builder->setParameter('mcp.instructions', $config['instructions']);
         $builder->setParameter('mcp.discovery.scan_dirs', $config['discovery']['scan_dirs']);
         $builder->setParameter('mcp.discovery.exclude_dirs', $config['discovery']['exclude_dirs']);
+        $builder->setParameter('mcp.oauth.scopes_supported', $config['oauth']['scopes_supported']);
+        $builder->setParameter('mcp.oauth.resource_documentation', $config['oauth']['resource_documentation']);
 
         $this->registerMcpAttributes($builder);
 
@@ -88,9 +90,9 @@ final class McpBundle extends AbstractBundle
             $builder->setDefinition('mcp.data_collector', $dataCollector);
         }
 
-        if (isset($config['client_transports'])) {
+       // if (isset($config['client_transports'])) {
             $this->configureClient($config['client_transports'], $config['http'], $builder);
-        }
+       // }
     }
 
     public function build(ContainerBuilder $container): void
@@ -162,6 +164,7 @@ final class McpBundle extends AbstractBundle
                     new Reference('mcp.psr17_factory'),
                     new Reference('mcp.psr17_factory'),
                     new Reference('logger'),
+                    new Reference('mcp.session.store'),
                 ])
                 ->setPublic(true)
                 ->addTag('controller.service_arguments')

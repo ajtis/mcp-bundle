@@ -1,6 +1,6 @@
 {
-    "name": "symfony/mcp-bundle",
-    "description": "Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
+    "name": "wmc/mcp-bundle",
+    "description": "WMC FORK: Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
     "license": "MIT",
     "type": "symfony-bundle",
     "authors": [
@@ -16,14 +16,14 @@
     "require": {
         "mcp/sdk": "^0.4",
         "php-http/discovery": "^1.20",
-        "symfony/config": "^7.3|^8.0",
-        "symfony/console": "^7.3|^8.0",
-        "symfony/dependency-injection": "^7.3|^8.0",
-        "symfony/framework-bundle": "^7.3|^8.0",
-        "symfony/http-foundation": "^7.3|^8.0",
-        "symfony/http-kernel": "^7.3|^8.0",
-        "symfony/psr-http-message-bridge": "^7.3|^8.0",
-        "symfony/routing": "^7.3|^8.0",
+        "symfony/config": "^6.4|^7.3|^8.0",
+        "symfony/console": "^6.4|^7.3|^8.0",
+        "symfony/dependency-injection": "^6.4|^7.3|^8.0",
+        "symfony/framework-bundle": "^6.4|^7.3|^8.0",
+        "symfony/http-foundation": "^6.4|^7.3|^8.0",
+        "symfony/http-kernel": "^6.4|^7.3|^8.0",
+        "symfony/psr-http-message-bridge": "^6.4|^7.3|^8.0",
+        "symfony/routing": "^6.4|^7.3|^8.0",
         "symfony/service-contracts": "^2.5|^3"
     },
     "require-dev": {
