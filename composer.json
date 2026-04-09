@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-    "name": "wmc/mcp-bundle",
-    "description": "WMC FORK: Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
-=======
     "name": "ajtis/mcp-bundle",
     "description": "Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
->>>>>>> origin/main
     "license": "MIT",
     "type": "symfony-bundle",
     "authors": [
