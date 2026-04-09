@@ -24,11 +24,7 @@
         "symfony/http-kernel": "^6.4|^7.3|^8.0",
         "symfony/psr-http-message-bridge": "^6.4|^7.3|^8.0",
         "symfony/routing": "^6.4|^7.3|^8.0",
-<<<<<<< HEAD
         "symfony/service-contracts": "^2.5|^3"
-=======
-        "symfony/service-contracts": "^6.4|^2.5|^3"
->>>>>>> origin/main
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
