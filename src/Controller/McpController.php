@@ -43,8 +43,20 @@ final class McpController
     {
         $psrRequest = $this->httpMessageFactory->createRequest($request);
 
-        // Auto-create a session for Bearer token requests that skip the initialize handshake
-        if ($this->sessionStore !== null
+        // Auto-create a session for Bearer token requests that skip the initialize handshake.
+        // Skip for "initialize" requests — the MCP spec forbids a session ID on initialize;
+        // the SDK will create the session itself during the handshake.
+        $isInitialize = false;
+        $body = $psrRequest->getBody()->getContents();
+        if ('' !== $body) {
+            $decoded = json_decode($body, true);
+            $isInitialize = \is_array($decoded) && 'initialize' === ($decoded['method'] ?? null);
+            // Rewind so the transport can read the body again
+            $psrRequest->getBody()->rewind();
+        }
+
+        if (!$isInitialize
+            && $this->sessionStore !== null
             && '' === $psrRequest->getHeaderLine('Mcp-Session-Id')
             && str_starts_with($psrRequest->getHeaderLine('Authorization'), 'Bearer ')
         ) {
